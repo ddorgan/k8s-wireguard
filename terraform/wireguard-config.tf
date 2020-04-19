@@ -13,7 +13,7 @@ depends_on = [null_resource.install_wireguard]
 provisioner "local-exec" {
     command = <<LOCAL_EXEC
     export KUBECONFIG="${var.kube-config}"
-    gcloud container clusters get-credentials ${var.cluster-name} --zone europe-west4-b --project ${var.project}
+    gcloud container clusters get-credentials ${var.cluster-name}  --zone ${var.zones} --project ${var.project}
     LOCAL_EXEC
  }
 }
