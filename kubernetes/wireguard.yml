@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wireguard-vpn
+  labels:
+    app: wireguard-vpn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wireguard-vpn
+  template:
+    metadata:
+      labels:
+        app: wireguard-vpn
+    spec:
+      containers:
+      - name: wireguard
+        image: ddorgan/wireguard
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - name: config-volume
+            mountPath: /etc/wireguard/wg0.conf
+            subPath: wg0.conf
+      volumes:
+      - name: config-volume
+        configMap:
+          name: wireguard-config
