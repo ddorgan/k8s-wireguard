@@ -5,7 +5,7 @@ plan:
 	@terraform plan -input=false -out=../data/plan.out -detailed-exitcode
 
 apply:
-	@terraform apply -auto-approve
+	@terraform apply
 
 destroy:
 	@terraform destroy
