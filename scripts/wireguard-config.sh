@@ -1,4 +1,5 @@
 #!/bin/bash
+umask 277
 DATA_PATH="../data"
 KUBERNETES_PATH="../kubernetes"
 TEMPLATES_PATH="../kubernetes/templates"
