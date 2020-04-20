@@ -30,6 +30,10 @@ variable "node-count" {
    default = 2
 }
 
+variable "cluster-subnet-range" {
+   default = "10.50.0.0/16"
+}
+
 variable "wireguard-install-cmd" {
    default = "curl https://gist.githubusercontent.com/ddorgan/c764abb840ba087bfd8775bec01b7e0d/raw/51435e99487402c25a8903909d2483580f06921c/install.sh | sudo bash"
 }

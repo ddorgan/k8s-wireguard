@@ -3,8 +3,8 @@ resource "google_container_cluster" "primary" {
   location           = var.zones
   # delete on cluster creation
   initial_node_count = 1
+  cluster_ipv4_cidr = var.cluster-subnet-range
   remove_default_node_pool = true
-
 
   master_auth {
   username = ""
@@ -22,6 +22,7 @@ resource "google_container_node_pool" "primary_nodes" {
   location   = var.zones
   cluster    = google_container_cluster.primary.name
   node_count = var.node-count
+
 
   node_config {
     machine_type = var.machine-type
