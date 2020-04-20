@@ -3,7 +3,7 @@ Introduction
 
 This repository contains some example scripts for deploying a kubernetes cluster with wireguard enabled on worker nodes using terraform.
 
-<span style="color:red">This is intended to be used for testing only, not suitable for production use.</span>
+***This is intended to be used for testing only, not suitable for production use.***
 
 Table of contents
 =================
@@ -24,9 +24,9 @@ Purpose
 
 Wireguard is a great piece of software and being able to spin up test kubernetes clusters with a vpn server built in is really useful for accessing pods and services within the cluster.
 
-The terraform script will create a new kubernetes cluster in GCP and install the wireguard kernel module on all of worker nodes. Once this is complete a script will run to generate some wireguard keys and add a deployment with a ConfigMap with the wireguard configuration. 
+The terraform script will create a new kubernetes cluster in GCP and install the wireguard kernel module on all of worker nodes. Once this is complete a script will run to generate some wireguard keys and add a deployment with a ConfigMap with the wireguard configuration.
 
-Finally a client wireguard configuration will be written to a local file and also printed via QR code that you can easily scan with your mobile phone. 
+Finally a client wireguard configuration will be written to a local file and also printed via QR code that you can easily scan with your mobile phone.
 
 Prerequisites
 =================
@@ -70,7 +70,7 @@ This plan was saved to: ../data/plan.out
 ```
 
 
-2. Run `make apply` to create the cluster and type `yes` to approve changes. 
+2. Run `make apply` to create the cluster and type `yes` to approve changes.
 
 The output should look something like:
 
