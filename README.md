@@ -34,6 +34,7 @@ Prerequisites
 1. Terraform (0.12.24) and google cloud sdk (289.0.0) installed.
 2. `The GOOGLE_APPLICATION_CREDENTIALS` variable has been set to a json file with credentials in the google account to create resources.
 3. You have created a unique storage bucket name and put that in the file `terraform/backend.tf`.
+4. A default alpine docker image `ddorgan/wireguard-alpine` is used. For reassurance your image is not tampered with you can build this image from the repository https://github.com/ddorgan/wireguard-alpine-docker, it just uses standard available alpine packages and an entrypoint script.
 
 
 Cluster Deployment

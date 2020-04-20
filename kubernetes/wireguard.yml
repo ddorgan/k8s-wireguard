@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: wireguard
-        image: ddorgan/wireguard
+        image: ddorgan/wireguard-alpine
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
