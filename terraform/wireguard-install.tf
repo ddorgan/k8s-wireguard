@@ -7,13 +7,6 @@ provisioner "local-exec" {
  }
 }
 
-data "google_container_cluster" "primary" {
-  depends_on = [google_container_node_pool.primary_nodes]
-  name     = "k8s-wireguard"
-  location = "europe-west4-b"
-}
-
-
 data "google_compute_instance_group" "all" {
     depends_on = [google_container_node_pool.primary_nodes]
     self_link = replace(google_container_node_pool.primary_nodes.instance_group_urls[0], "instanceGroupManagers", "instanceGroups")
